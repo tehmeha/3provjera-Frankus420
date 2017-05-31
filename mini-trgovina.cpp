@@ -15,7 +15,6 @@ int main()
 
     while(1)
     {
-
         cout << "Glavni izbornik" << endl;
         cout << "1. Unos novog artikla" << endl;
         cout << "2. Ispisi sve podatke" << endl;
@@ -42,14 +41,36 @@ int main()
             cout << "bar kod" << "\t" << "naziv artikla" << "\t" << "cijena" << endl;
             for( int i = 0; i < brojArtikla; i++ )
             {
-                cout << artikli[i] << endl;
+                cout << barkod [i] <<"\t";
+                cout << artikli[i] <<"\t";
+                cout << cijena [i] << endl;
             }
         }
         else if( izbor == 3 )
         {
+            cout << "upisite barkod";
+            cin >> barkod_pretraga;
+            bool pronadjen = false;
+            for (int i = 0; i<brojArtikla, i++)
+            {
+                if (barkod_pretraga == barkod[i])
+                {
+                cout << barkod [i] <<"\t";
+                cout << artikli[i] <<"\t";
+                cout << cijena [i] << endl;
+                    pronadjen==true
+                    break;
+
+                }
+                if (pronadjen == false)
+                {
+                    cout << "unijeli ste krivi barkod";
+                }
+            }
         }
         else if( izbor == 4 )
         {
+
         }
         else if( izbor == 5 )
         {

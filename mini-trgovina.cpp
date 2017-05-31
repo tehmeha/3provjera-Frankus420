@@ -34,6 +34,13 @@ int main()
             getline(cin, artikli[brojArtikla]);
             cout << "Unesite cijenu artikla" ;
             cin >> barkod [brojArtikla];
+
+            datotekaUpisivanje.open("artikli.txt", ios::app);
+            datotekaUpisivanje << barkod [brojArtikla] << endl;
+            datotekaUpisivanje << cijena [brojArtikla] << endl;
+            datotekaUpisivanje << artikli [brojArtikla] << endl;
+            datotekaUpisivanje.close();
+
             brojArtikla++;
         }
         else if( izbor == 2 )
@@ -48,19 +55,19 @@ int main()
         }
         else if( izbor == 3 )
         {
+            unsigned long long int barkod_pretraga;
             cout << "upisite barkod";
             cin >> barkod_pretraga;
             bool pronadjen = false;
-            for (int i = 0; i<brojArtikla, i++)
+            for (int i = 0; i<brojArtikla; i++)
             {
                 if (barkod_pretraga == barkod[i])
                 {
-                cout << barkod [i] <<"\t";
-                cout << artikli[i] <<"\t";
-                cout << cijena [i] << endl;
-                    pronadjen==true
+                    cout << barkod [i] <<"\t";
+                    cout << artikli[i] <<"\t";
+                    cout << cijena [i] << endl;
+                    pronadjen==true;
                     break;
-
                 }
                 if (pronadjen == false)
                 {
@@ -70,7 +77,26 @@ int main()
         }
         else if( izbor == 4 )
         {
-
+            string naziv_pretraga;
+            cout << "Upisite naziv artikla";
+            cin.ignore();
+            getline(cin, naziv_pretraga);
+            bool pronadjen = false;
+            for (int i = 0; i<brojArtikla; i++)
+            {
+                if (naziv_pretraga == artikli[i])
+                {
+                    cout << barkod [i] <<"\t";
+                    cout << artikli[i] <<"\t";
+                    cout << cijena [i] << endl;
+                    pronadjen = true;
+                    break;
+                }
+            }
+            if (pronadjen == false)
+            {
+                cout << "artikl ne postoji";
+            }
         }
         else if( izbor == 5 )
         {

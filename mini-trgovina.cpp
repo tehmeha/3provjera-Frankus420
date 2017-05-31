@@ -15,6 +15,7 @@ int main()
 
     while(1)
     {
+
         cout << "Glavni izbornik" << endl;
         cout << "1. Unos novog artikla" << endl;
         cout << "2. Ispisi sve podatke" << endl;
